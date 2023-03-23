@@ -5,12 +5,16 @@ import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import * as SplashScreen from "expo-splash-screen";
 import { useCallback, useEffect, useState } from "react";
 import * as Font from "expo-font";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 import AppNavigator from "./navigation/AppNavigator";
 import { Provider } from "react-redux";
 import { store } from "./store/store";
 
 SplashScreen.preventAutoHideAsync();
+
+// temporarily handle logout
+// AsyncStorage.clear();
 
 export default function App() {
     const [appIsLoaded, setAppIsLoaded] = useState(false);
